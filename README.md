@@ -20,8 +20,8 @@ Retrieves all expenses in the database for the determined year and month
 
 ```
 
-`$api_url$:3000/listCategory/`
+`$api_url$:3000/listCategory/:id`
 ```
-Retrieves all expenses in the database for the determined category
+Retrieves all expenses in the database for the determined category id
 
 ```
