@@ -1,0 +1,19 @@
+{
+  "name": "expensesmanagerfranco",
+  "version": "1.0.0",
+  "description": "A simple api for adding and retrieving expenses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "expenses"
+  ],
+  "author": "Franco Zalamena",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "firebase-admin": "^10.2.0"
+  }
+}
