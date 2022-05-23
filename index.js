@@ -92,6 +92,6 @@ app.post("/add", async (req, res) => {
   res.json({sentExpense: expenseToAdd, writeTime: writePromise})
 })
 
-app.listen(3000, async (response) => {
+app.listen(process.env.PORT, async (response) => {
   console.log("app listening port 30000");
 })
