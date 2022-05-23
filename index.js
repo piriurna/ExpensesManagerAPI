@@ -1,7 +1,7 @@
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
-const serviceAccount = require(process.env.FIRESTORE_SERVICE_ACCOUNT);
-const splitwiseServiceAccount = require(process.env.SPLITWISE_SERVICE_ACCOUNT);
+const serviceAccount = process.env.FIRESTORE_SERVICE_ACCOUNT;
+const splitwiseServiceAccount = process.env.SPLITWISE_SERVICE_ACCOUNT;
 initializeApp({
   credential: cert(serviceAccount)
 });
