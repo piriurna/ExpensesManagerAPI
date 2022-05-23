@@ -1,0 +1,12 @@
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+
+echo "-----> Setting up dyno for google service account use."
+echo "-----> Generating .google/ folder."
+mkdir -p $BUILD_DIR/.google/
+
+CREDENTIALS=$(cat ${ENV_DIR}/GOOGLE_CREDENTIALS)
+LOC=$(cat ${ENV_DIR}/GOOGLE_APPLICATION_CREDENTIALS)
+
+echo $CREDENTIALS > $BUILD_DIR/$LOC
