@@ -1,10 +1,18 @@
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
-const serviceAccount = require(process.env.FIRESTORE_SERVICE_ACCOUNT);
+const serviceAccount = require("./google-credentials.json");
+// const splitwiseServiceAccount = process.env.SPLITWISE_SERVICE_ACCOUNT;
 initializeApp({
   credential: cert(serviceAccount)
 });
 const db = getFirestore();
+
+// const Splitwise = require('splitwise')
+// const sw = Splitwise(splitwiseServiceAccount)
+
+
+// let splitwiseUser = {} //defined in the end of the file when the server starts listening
+
 
 const express = require('express')
 const app = express()
@@ -84,6 +92,6 @@ app.post("/add", async (req, res) => {
   res.json({sentExpense: expenseToAdd, writeTime: writePromise})
 })
 
-app.listen(3000, (response) => {
+app.listen(process.env.PORT, async (response) => {
   console.log("app listening port 30000");
 })
